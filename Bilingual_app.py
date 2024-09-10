@@ -1,0 +1,60 @@
+from tkinter import *
+root = Tk()
+root.title("MetalCode")
+root.geometry("500x500")
+lang = "english"
+def changelang():
+    global lang
+    if lang == "english":
+        lang = "persian"
+    elif lang == "persian":
+        lang = "english"
+    if lang == "persian":
+        lbl2.configure(text = entry.get())
+        lbl2.pack()
+        lbl.configure(text = "خوش آمدید به این برنامه")
+        lbl.pack()
+        entry.pack()
+        btn.pack()
+        btn2.pack()
+        space1.pack()
+        space2.pack()
+        btn2.configure(text="به انگلیسی")
+        btn.configure(text="ارسال")
+        lbl2.configure(text="")
+        lbl2.pack()
+        space1.pack()
+        space2.pack()
+    elif lang == "english":
+        lbl2.configure(text = entry.get())
+        lbl2.pack()
+        lbl.configure(text = "Welcome to this app!")
+        lbl.pack()
+        entry.pack()
+        btn.pack()
+        btn2.pack()
+        space1.pack()
+        space2.pack()
+        btn2.configure(text="To persian")
+        btn.configure(text="Submit")
+        lbl2.configure(text="")
+        lbl2.pack()
+        space1.pack()
+        space2.pack()
+def Submit():
+   lbl2.configure(text = entry.get())
+lbl = Label(root , text = "Welcome to this app!")
+lbl.pack()
+entry = Entry(root)
+entry.pack()
+btn = Button(root,command= Submit,text="Submit")
+btn.pack()
+lbl2 = Label(root , text = "")
+lbl2.pack()
+space1 = Label(root,text="")
+space1.pack()
+space2 = Label(root,text="")
+space2.pack()
+btn2 = Button(root,text="To persian",command=changelang)
+btn2.pack()
+root.mainloop()
